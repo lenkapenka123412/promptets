@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111117">
+  <meta name="description" content="ПРОМПТЕЦ: генератор самых действенных бесполезных промптов. Крути бегущие строки, измеряй отчаяние, сохраняй карточку для сторис.">
+  <meta property="og:title" content="ПРОМПТЕЦ | Сделай нормально!">
+  <meta property="og:description" content="Последний аргумент в разговоре с искусственным интеллектом.">
+  <title>ПРОМПТЕЦ. | Сделай нормально!</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="prompts-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#generator">Перейти к рулетке</a>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track">СДЕЛАЙ НОРМАЛЬНО <span>✳</span> ПЛОХО НЕ ДЕЛАЙ <span>✳</span> НАУЧНО НЕ ДОКАЗАНО <span>✳</span> СДЕЛАЙ НОРМАЛЬНО <span>✳</span> ПЛОХО НЕ ДЕЛАЙ <span>✳</span> НАУЧНО НЕ ДОКАЗАНО <span>✳</span></div></div>
+  <div class="container">
+    <header class="site-header">
+      <a href="#top" class="logo" aria-label="Промптец — начало страницы">ПРОМПТЕЦ<span>.</span></a>
+      <div class="header-side"><span class="status-dot"></span><span>НЕЙРОАНТИСТРЕСС-СИСТЕМА <b>V0.2</b></span></div>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="asterisk">✳</span> МЕТОДИКА ОДОБРЕНА УСТАЛЫМИ ЛЮДЬМИ</span>
+          <h1>СДЕЛАЙ<br><span>НОРМАЛЬНО</span><i>!</i></h1>
+          <p class="hero-intro">Нейросеть в семнадцатый раз делает какую-то дичь? Возможно, пора применить <strong>самые эффективные бесполезные промпты</strong> на планете.</p>
+          <p class="footnote">* Ни один искусственный интеллект не пострадал. Человеческое терпение — не гарантируем.</p>
+          <div class="metrics">
+            <div><strong id="totalCount">300</strong><small>ПРОМПТОВ<br>В АРСЕНАЛЕ</small></div>
+            <div><strong>03</strong><small>СТАДИИ<br>ОТЧАЯНИЯ</small></div>
+            <div><strong>0%</strong><small>НАУЧНОЙ<br>ДОКАЗАННОСТИ</small></div>
+          </div>
+        </div>
+        <div class="console" id="generator" aria-label="Рулетка промптов">
+          <div class="console-head"><span><span class="console-glyph">▣</span> ГЕНЕРАТОР ПОСЛЕДНЕЙ НАДЕЖДЫ</span><span id="machineStatus" class="machine-status">● READY</span></div>
+          <div class="console-body">
+            <div class="label-row"><span class="section-label">01 / ВЫБЕРИ СТЕПЕНЬ ОТЧАЯНИЯ</span><span>ЧЕСТНО</span></div>
+            <div class="levels" role="group" aria-label="Степень раздражения">
+              <button type="button" class="level selected" data-level="0" aria-pressed="true"><span>🎲</span><small>СЮРПРИЗ</small></button>
+              <button type="button" class="level" data-level="1" aria-pressed="false"><span>🙂</span><small>ДЕРЖУСЬ</small></button>
+              <button type="button" class="level" data-level="2" aria-pressed="false"><span>😑</span><small>БЕСИТ</small></button>
+              <button type="button" class="level" data-level="3" aria-pressed="false"><span>🤬</span><small>Я ОРУ</small></button>
+            </div>
+            <div class="filters"><label class="toggle"><input type="checkbox" id="cleanMode"><span class="toggle-ui" aria-hidden="true"></span>Без мата, я на работе</label><span class="pool" id="poolCount">300 В РУЛЕТКЕ</span></div>
+            <div class="slot-label"><span class="section-label">02 / ЗАПУСТИ РУЛЕТКУ</span><span>ТЕКСТОВЫЙ СЛОТ</span></div>
+            <div class="slot-machine" aria-label="Бегущие строки промптов" aria-busy="false" id="slotMachine">
+              <div class="slot-glow"></div>
+              <div class="slot-line muted" id="slotPrev" aria-hidden="true">Пожалуйста, сделай правильно...</div>
+              <div class="slot-line main-line" id="slotMain">ОСТАЛОСЬ ТОЛЬКО ПОВЕРИТЬ В ЧУДО</div>
+              <div class="slot-line muted" id="slotNext" aria-hidden="true">Попробуй ещё раз...</div>
+              <div class="slot-left-mark" aria-hidden="true">›</div><div class="slot-right-mark" aria-hidden="true">‹</div>
+            </div>
+            <button type="button" id="spinButton" class="primary-button"><span>⚡</span> КРУТАНУТЬ ПРОМПТЕЦ <span class="arrow">↗</span></button>
+            <div class="below-spin"><span>Может вызвать приступ самоиронии</span><span id="spinNote">ОЖИДАНИЕ...</span></div>
+          </div>
+          <div class="console-bottom"><span>AI_EXORCISM_ENGINE // 002</span><span>✳ ✳ ✳</span></div>
+        </div>
+      </section>
+      <section id="resultSection" class="result-section is-hidden" aria-live="polite">
+        <div class="result-heading"><div><span class="eyebrow">РЕЗУЛЬТАТ ЛАБОРАТОРНЫХ СТРАДАНИЙ</span><h2>ВАШ ПРОМПТ ДНЯ<span>.</span></h2></div><span class="result-number" id="resultId">№ P000</span></div>
+        <div class="result-layout">
+          <article class="quote-card"><div class="quote-card-top"><span>ПРОМПТ / <span id="cardCategory">НЕИЗВЕСТНАЯ НАУКЕ КАТЕГОРИЯ</span></span><span>✳ / 01</span></div><blockquote id="quoteText">«Сделай хорошо, плохо не делай»</blockquote><div class="recommendation"><span>РЕКОМЕНДУЕТСЯ ПРИМЕНЯТЬ:</span><p id="recommendationText"></p></div><div class="quote-card-bottom"><span>ПРОМПТЕЦ.</span><span>НЕ ПЫТАЙТЕСЬ ПОВТОРИТЬ СЕРЬЁЗНО</span></div></article>
+          <aside class="result-aside"><div class="aside-kicker">ИНДЕКС ОТЧАЯНИЯ</div><div class="score-line"><strong id="despairScore">00</strong><span>/100</span></div><div class="progress-track"><span id="progressFill"></span></div><p class="score-note" id="scoreNote">Значение рассчитывается практически на глаз. Но с очень серьёзным лицом.</p><div class="result-actions"><button type="button" class="primary-button" id="shareButton">↗ ПОДЕЛИТЬСЯ В СТОРИС</button><button type="button" class="secondary-button" id="downloadButton">↓ СКАЧАТЬ КАРТОЧКУ PNG</button><button type="button" class="secondary-button" id="copyButton">▣ СКОПИРОВАТЬ ПРОМПТ</button><button type="button" class="link-button" id="againButton">↻ МНЕ НУЖЕН ДРУГОЙ АРГУМЕНТ</button></div><p class="platform-note">Публикация в Instagram зависит от телефона. Если отправка недоступна, скачай PNG 1080×1920 и добавь в сторис вручную.</p></aside>
+        </div>
+      </section>
+      <section class="rules" aria-label="Что важно знать">
+        <div><span>01 / ПРИНЦИП</span><h3>ТЕХНОЛОГИИ БУДУЩЕГО.<br>ЭМОЦИИ НАСТОЯЩЕГО.</h3><p>Это юмористический генератор, а не способ повысить качество ответов нейросети. Хотя формулировка «хватит выдумывать» иногда выглядит перспективно.</p></div>
+        <div><span>02 / БЕЗ ЛИШНЕГО</span><h3>НИ ТОКЕНОВ.<br>НИ ПОДПИСКИ.</h3><p>Вся магия работает прямо в браузере. Никаких серверов, аккаунтов, сборов данных и загадочных API-ключей.</p></div>
+        <div><span>03 / СОХРАНИ НА ПАМЯТЬ</span><h3>КОГДА СЛОВ УЖЕ НЕТ.<br>ЗАТО ЕСТЬ СТОРИС.</h3><p>Делись выпавшей карточкой с коллегами. Особенно с теми, кто уже третий час объясняет роботу, что такое «как на референсе».</p></div>
+      </section>
+      <section class="editor" id="editor"><div class="editor-copy"><span>⌘ РЕДАКТОРСКИЙ РЕЖИМ</span><h3>НАСТРАИВАЙ АБСУРД ПОД СЕБЯ.</h3><p>Загрузи исправленный CSV UTF-8 или JSON. Таблица с пометкой «Удалить» исключается из розыгрыша. Временный импорт в браузере не меняет файлы сайта на сервере.</p><p class="editor-status" id="importStatus" role="status" aria-live="polite">Загружена базовая коллекция.</p></div><div class="editor-actions"><label class="upload-button" for="dbFile">↑ ЗАГРУЗИТЬ CSV / JSON</label><input type="file" id="dbFile" accept=".csv,.json,text/csv,application/json"><button type="button" class="export-button" id="exportButton">↓ ЭКСПОРТ JSON</button></div></section>
+    </main>
+    <footer><span>© 2026 ПРОМПТЕЦ. ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ. НАТУРАЛЬНЫЕ ПРЕТЕНЗИИ.</span><span>ПРИ ПЕРВОЙ ВОЗМОЖНОСТИ НАПИШИТЕ НОРМАЛЬНОЕ ТЗ.</span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript">Для рулетки нужен JavaScript. Без него даже эти промпты не помогут.</div></noscript>
+</body>
+</html>
